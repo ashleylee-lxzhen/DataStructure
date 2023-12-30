@@ -45,7 +45,7 @@ https://templatemo.com/tm-590-topic-listing
                             </nav>
 
                             <h2 class="text-white">搜尋結果</h2>
-                            <button onclick='location.href=("index.html")' style="background: var(--custom-btn-bg-color);
+                            <!-- <button onclick='location.href=("index.html")' style="background: var(--custom-btn-bg-color);
 border: none;
 border-radius: var(--border-radius-large);
 color: var(--white-color);
@@ -53,14 +53,25 @@ font-family: var(--title-font-family);
 font-size: var(--p-font-size);
 font-weight: var(--font-weight-semibold);
 transition: all 0.3s;
-margin-bottom: 0;">上一頁</button>
+margin-bottom: 0;">上一頁</button> -->
+  
                         </div>
-
+                        <form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text bi-search" id="basic-addon1" style="margin-bottom: 24px;">
+                                    
+                                </span>
+                                <input name="keyword" type="search" class="form-control" id="keyword" placeholder="輸入想搜尋的關鍵字..." aria-label="Search" style="margin-bottom: 24px;">
+                                <button type="button" class="form-control" onclick='location.href=("searchresult.html")' style="margin-bottom: 24px;">搜尋</button>
+                            </div>
+                        </form>
                     </div>
+                    
                 </div>
+                
             </header>
 
-
+            
             <section class="section-padding">
                 <div class="container">
                     <div class="row">
@@ -72,12 +83,11 @@ margin-bottom: 0;">上一頁</button>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
     var booksContainer = document.querySelector('.row');
-    for (var i = 1; i <= 5; i++) {
+    var i = 1;
         var blockDiv = document.createElement('div');
         blockDiv.className = 'custom-block custom-block-topics-listing bg-white shadow-lg mb-5';
         blockDiv.innerHTML = `
             <div class="d-flex">
-                <img src="images/book${i}.jpg" class="custom-block-image img-fluid" alt="book${i}.jpg">
                 <div class="custom-block-topics-listing-info d-flex">
                     <div>
                         <h5 class="mb-2">Name of Book ${i}</h5>
@@ -87,7 +97,7 @@ margin-bottom: 0;">上一頁</button>
             </div>
         `;
         booksContainer.appendChild(blockDiv);
-    }
+    
 });
 
 </script>

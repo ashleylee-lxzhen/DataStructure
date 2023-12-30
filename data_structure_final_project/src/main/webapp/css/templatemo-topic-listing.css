@@ -604,6 +604,12 @@ strong {
   padding: 30px;
 }
 
+.custom-block.custom-block-topics-listing {
+  height: 400px; /* 你可以根据需要调整高度 */
+  /* 添加其他样式属性 */
+}
+
+
 .social-share {
   position: absolute;
   bottom: 0;
@@ -900,7 +906,6 @@ blockquote {
 .custom-form .form-control {
   border-radius: var(--border-radius-large);
   color: var(--p-color);
-  margin-bottom: 24px;
   padding-top: 13px;
   padding-bottom: 13px;
   padding-left: 20px;
@@ -938,7 +943,6 @@ blockquote {
   font-size: var(--p-font-size);
   font-weight: var(--font-weight-semibold);
   transition: all 0.3s;
-  margin-bottom: 0;
 }
 
 .custom-form button[type="button"]:hover,
