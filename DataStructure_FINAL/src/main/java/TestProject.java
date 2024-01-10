@@ -77,12 +77,12 @@ public class TestProject extends HttpServlet {
 		//Title和網址都先存在HashMap
 		HashMap<String, String> baseUrls = googleQuery.query();
 		
-/*		測試是否有正確存到 baseUrls：有！
- * 		
- * 		for(Entry<String, String> entry : baseUrls.entrySet()) {
- * 		System.out.println("Title is: " + entry.getKey() + " - URL is: " + entry.getValue());
- * 		}
-*/	
+//		測試是否有正確存到 baseUrls：有！
+  		
+  		for(Entry<String, String> entry : baseUrls.entrySet()) {
+  		System.out.println("Title is: " + entry.getKey() + " - URL is: " + entry.getValue());
+  		}
+  		
 		Filter.trees.clear(); // 清除樹列表
 		Filter.keywordsList = Filter.initKeywordsList(); // 重新初始化關鍵字列表
 
@@ -90,9 +90,10 @@ public class TestProject extends HttpServlet {
 		//把每個HashMap的元素都翻出來（一個元素包含 title 和 url）
 		for(Entry<String, String> entry : baseUrls.entrySet()) {
 			if(!(entry.getKey().equals("") || entry.getValue().equals(""))) {
-				System.out.println("Test Title is: " + entry.getKey() + " - Test URL is: " + entry.getValue());
+				//System.out.println("Test Title is: " + entry.getKey() + " - Test URL is: " + entry.getValue());
 		    
 				//把這個元素建立成 webPage，並做成一個 Node，這個 Node 預計成為 Tree 的 root
+				//System.out.println("Entry~:    " + entry.getValue());
 				WebNode root = new WebNode(new WebPage(entry.getKey(), entry.getValue()));
 			
 				//建立一個 tree，而 root 就是剛剛那個 node
@@ -131,6 +132,8 @@ public class TestProject extends HttpServlet {
 		HashMap<String, String> sortedHashMap = new LinkedHashMap<>();
 		//把 Filter 裡面每個 Tree 都放到 SortedHashMap 內並回傳
 		for (WebTree tree: Filter.trees) {
+
+			tree.eularPrintTree(tree.root);
 			sortedHashMap.put(tree.root.page.title, tree.root.page.url);
 		}
 		return sortedHashMap;

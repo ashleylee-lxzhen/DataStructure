@@ -69,24 +69,29 @@ public class GoogleQuery
 	
 	public HashMap<String, String> query() throws IOException
 	{
-		if(content == null)
+
+		if(content==null)
+
 		{
-			content = fetchContent();
+
+			content= fetchContent();
+
 		}
 
 		HashMap<String, String> retVal = new HashMap<String, String>();
 		
-		
-		//using Jsoup analyze html string
 		Document doc = Jsoup.parse(content);
-		
-		//select particular element(tag) which you want 
+		//System.out.println(doc.text());
 		Elements lis = doc.select("div");
+//		 System.out.println(lis);
 		lis = lis.select(".kCrYT");
+		// System.out.println(lis.size());
+		
 		
 		for(Element li : lis)
 		{
 			try 
+
 			{
 				String citeUrl = li.select("a").get(0).attr("href");
 				String title = li.select("a").get(0).select(".vvjwJb").text();
@@ -105,26 +110,32 @@ public class GoogleQuery
 					continue;
 				}
 				
-				//System.out.println("Title: " + title + " , url: " + citeUrl);
+				//System.out.println(title + ","+citeUrl.replace("/url?q=", ""));
+				retVal.put(title, citeUrl.replace("/url?q=", "").replace("%3F","?"));
+//				retVal.put(title, citeUrl);
 
-		        //String cleanedURL = cleanURL(citeUrl);
-				
-				//put title and pair into HashMap
-				retVal.put(title, citeUrl);
+			} catch (IndexOutOfBoundsException e) {
 
-			} catch (IndexOutOfBoundsException e) 
-			{
-				//e.printStackTrace();
+//				e.printStackTrace();
+
 			}
+
+			
+
 		}
+
+		
+
+		return retVal;
 		
 //		for(Entry<String, String> entry : retVal.entrySet()) {
 //		    System.out.println("G Title is: " + entry.getKey() + " - G URL is: " + entry.getValue());
 //		}
 
-		
-		return retVal;
 	}
+	
+	
+	
 	public List<String> getRelatedKeyword() throws IOException {
 		ArrayList<String> result = new ArrayList<>();
 		if (content == null) {
@@ -137,6 +148,7 @@ public class GoogleQuery
 		}
 		return result;
 	}
+	
 	
     public static String cleanURL(String originalURL) {
         try {

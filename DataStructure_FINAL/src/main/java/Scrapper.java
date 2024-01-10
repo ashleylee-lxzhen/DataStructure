@@ -26,8 +26,8 @@ public class Scrapper {
 				retVal = retVal + line + "\n";
 			}
 		}catch(Exception e) {
-			//System.out.println("Exception in Scrapper");
-			//e.printStackTrace();
+			System.out.println("Exception in Scrapper");
+			e.printStackTrace();
 		}
 			
 	

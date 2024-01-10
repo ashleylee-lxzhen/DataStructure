@@ -18,52 +18,52 @@ public class Filter {
 	public static Set<Keyword> initKeywordsList() {
 		Set<Keyword> keywordsList = new HashSet<>();
         // ISBN號碼
-        keywordsList.add(new Keyword("ISBN", 1000000));
+        keywordsList.add(new Keyword("ISBN", 1000));
         // 書名
-        keywordsList.add(new Keyword("書名", 100000));
-        keywordsList.add(new Keyword("書籍", 100000));
+        keywordsList.add(new Keyword("書名", 100));
+        keywordsList.add(new Keyword("書籍", 100));
         // 作者
-        keywordsList.add(new Keyword("作者", 800));
-        keywordsList.add(new Keyword("作家", 800));
-        keywordsList.add(new Keyword("譯者", 800));
+        keywordsList.add(new Keyword("作者", 80));
+        keywordsList.add(new Keyword("作家", 80));
+        keywordsList.add(new Keyword("譯者", 80));
         // 網路書城
-        keywordsList.add(new Keyword("博客來", 3000));
-        keywordsList.add(new Keyword("誠品線上", 3000));
-        keywordsList.add(new Keyword("金石堂網路書店", 300000));
-        keywordsList.add(new Keyword("讀冊生活網路書店", 3000));
-        keywordsList.add(new Keyword("Readmoo讀墨電子書", 3000));
-        keywordsList.add(new Keyword("墊腳石", 300));
-        keywordsList.add(new Keyword("Hami書城", 3000));
-        keywordsList.add(new Keyword("Rakuten Kobo", 3000));
-        keywordsList.add(new Keyword("全國新書資訊網", 3000));
+        keywordsList.add(new Keyword("博客來", 30));
+        keywordsList.add(new Keyword("誠品線上", 30));
+        keywordsList.add(new Keyword("金石堂網路書店", 30));
+        keywordsList.add(new Keyword("讀冊生活網路書店", 30));
+        keywordsList.add(new Keyword("Readmoo讀墨電子書", 30));
+        keywordsList.add(new Keyword("墊腳石", 30));
+        keywordsList.add(new Keyword("Hami書城", 30));
+        keywordsList.add(new Keyword("Rakuten Kobo", 30));
+        keywordsList.add(new Keyword("全國新書資訊網", 30));
         // 出版資訊
-        keywordsList.add(new Keyword("publisher", 600));
-        keywordsList.add(new Keyword("出版社", 600));
-        keywordsList.add(new Keyword("出版商", 600));
-        keywordsList.add(new Keyword("出版日期", 400));
-        keywordsList.add(new Keyword("publication date", 400));
+        keywordsList.add(new Keyword("publisher", 60));
+        keywordsList.add(new Keyword("出版社", 60));
+        keywordsList.add(new Keyword("出版商", 60));
+        keywordsList.add(new Keyword("出版日期", 40));
+        keywordsList.add(new Keyword("publication date", 40));
         keywordsList.add(new Keyword("release date", 4));
         //書籍類型
-        keywordsList.add(new Keyword("電子書", 40000));
-        keywordsList.add(new Keyword("平裝書", 40000));
-        keywordsList.add(new Keyword("精裝書", 40000));
+        keywordsList.add(new Keyword("電子書", 40));
+        keywordsList.add(new Keyword("平裝書", 40));
+        keywordsList.add(new Keyword("精裝書", 40));
         //內容摘要
         keywordsList.add(new Keyword("摘要", 5));
         keywordsList.add(new Keyword("簡介", 5));
         //負權重關鍵字
-        keywordsList.add(new Keyword("booking", -100000)); 	//避免出現餐廳預約網站
-        keywordsList.add(new Keyword("預約", -100000));
-        keywordsList.add(new Keyword("訂位", -10000)); 
-        keywordsList.add(new Keyword("inline", -10000)); 
-        keywordsList.add(new Keyword("地址", -100000)); 
-        keywordsList.add(new Keyword("餐廳", -500000000)); 
-        keywordsList.add(new Keyword("菜單", -50000)); 
-        keywordsList.add(new Keyword("購物", -50000)); 	 	//避免出現無關購物網站
-        keywordsList.add(new Keyword("article", -50000));
-        keywordsList.add(new Keyword("新聞", -900000000));
-        keywordsList.add(new Keyword("娛樂", -900000000));
-        keywordsList.add(new Keyword("藝人", -900000000));
-        //keywordsList.add(new Keyword("蝦皮", -500000000));//避免出現部落格文章
+        keywordsList.add(new Keyword("booking", -10)); 	//避免出現餐廳預約網站
+        keywordsList.add(new Keyword("預約", -10));
+        keywordsList.add(new Keyword("訂位", -10)); 
+        keywordsList.add(new Keyword("inline", -10)); 
+        keywordsList.add(new Keyword("地址", -10)); 
+        keywordsList.add(new Keyword("餐廳", -50)); 
+        keywordsList.add(new Keyword("菜單", -50)); 
+        keywordsList.add(new Keyword("購物", -50)); 	 	//避免出現無關購物網站
+        keywordsList.add(new Keyword("article", -50));
+        keywordsList.add(new Keyword("新聞", -90));
+        keywordsList.add(new Keyword("娛樂", -90));
+        keywordsList.add(new Keyword("藝人", -90));
+        keywordsList.add(new Keyword("蝦皮", -50));//避免出現部落格文章
 
 		return keywordsList;
 	}

@@ -79,7 +79,7 @@ public class WebTree {
 		int nodeDepth = startNode.getDepth();
 
 		if (nodeDepth > 1)
-			System.out.print("\n" + repeat("\t", nodeDepth - 1));
+		System.out.print("\n" + repeat("\t", nodeDepth - 1));
 
 		System.out.print("(");
 		System.out.print(startNode.score);
